@@ -9,7 +9,7 @@ public class Test01 {
 		
 		EntityManager em = Config.getEmf().createEntityManager();
 		
-		Persona02 p = em.find(Persona02.class, 12);
+		Persona02 p = em.find(Persona02.class, 7);
 		
 		if(p != null) {
 			System.out.println(p);
@@ -20,9 +20,9 @@ public class Test01 {
 		Persona02 nuevo = new Persona02(0, "Federico", "Garcia Lorca");
 		nuevo.setGenero(Genero.MASC);
 		
-		em.getTransaction().begin();
-		em.persist(nuevo);
-		em.getTransaction().commit();
+//		em.getTransaction().begin();
+//		em.persist(nuevo);
+//		em.getTransaction().commit();
 		
 		
 		em.close();
