@@ -9,6 +9,7 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         
         <class>com.cursogetafe.jpa.ejemplo01.Persona</class>
+        <class>com.cursogetafe.jpa.ejemplo02.Persona02</class>
         
         <properties>
             <!-- JDBC -->
