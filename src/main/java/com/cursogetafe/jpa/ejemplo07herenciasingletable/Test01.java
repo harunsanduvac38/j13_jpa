@@ -1,4 +1,4 @@
-package com.cursogetafe.jpa.ejemplo06herenciajoined;
+package com.cursogetafe.jpa.ejemplo07herenciasingletable;
 
 import com.cursogetafe.jpa.config.Config;
 
@@ -9,12 +9,12 @@ public class Test01 {
 		
 		EntityManager em = Config.getEmf().createEntityManager();
 		
-		Circulo c = em.find(Circulo.class, 67);
+		Circulo02 c = em.find(Circulo02.class, 40);
 		
 		System.out.println(c);
 		
 		
-		Rectangulo r = new Rectangulo(1,2,3,4);
+		Rectangulo02 r = new Rectangulo02(1,2,3,4);
 		
 		em.getTransaction().begin();
 		em.persist(r);
