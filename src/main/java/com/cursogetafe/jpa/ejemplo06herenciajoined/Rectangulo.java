@@ -1,9 +1,16 @@
 package com.cursogetafe.jpa.ejemplo06herenciajoined;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "rectangulo_02")
 public class Rectangulo extends Figura {
 	
-
+	@Column(name = "l1")
 	private double lado1;
+	@Column(name = "l2")
 	private double lado2;
 	
 	public Rectangulo(double x, double y, double lado1, double lado2) {
@@ -50,7 +57,7 @@ public class Rectangulo extends Figura {
 	
 	@Override
 	public  String toString() {
-		return "Rectangulo [lado1=" + lado1 + ", lado2= " + lado2 + ", getX()=" + getX() + ", getY()=" + getY() + "]";
+		return "Rectangulo (lado1=" + lado1 + ", lado2= " + lado2 + ", getX()=" + getX() + ", getY()=" + getY() + ")";
 	}
 	
 	

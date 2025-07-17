@@ -3,8 +3,22 @@ package com.cursogetafe.jpa.ejemplo06herenciajoined;
 import java.io.Serializable;
 import java.util.Objects;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
+import jakarta.persistence.Table;
+
+
+@Entity
+@Table(name = "figuras02")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class  Figura implements Serializable {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idFigura;
 	private double x;
 	private double y;

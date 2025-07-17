@@ -1,7 +1,15 @@
 package com.cursogetafe.jpa.ejemplo06herenciajoined;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "circulo_02")
 public class Circulo extends Figura{
 	
+	
+	@Column(name = "r")
 	private double radio;
 	
 	
@@ -12,7 +20,11 @@ public class Circulo extends Figura{
 	}
 	
 	
-	
+	public Circulo() {
+	}
+
+
+
 	public void setRadio(double radio) {
 		this.radio = radio;
 	}
@@ -41,7 +53,7 @@ public class Circulo extends Figura{
 
 	@Override
 	public String toString() {
-		return "Circulo (" + radio + ", " + getRadio() + ", " + getDiametro() + ", " + calculaArea() + ", "
+		return "Circulo (" + radio + ", " + ", " + super.getX() + ", " + super.getY() + ", "
 				+ calculaPerimetro() + ")";
 	}
 	
