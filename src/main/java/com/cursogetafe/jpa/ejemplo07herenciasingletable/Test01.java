@@ -19,6 +19,9 @@ public class Test01 {
 		em.getTransaction().begin();
 		em.persist(r);
 		em.getTransaction().commit();
+		
+		
+		
 	}
 
 }
