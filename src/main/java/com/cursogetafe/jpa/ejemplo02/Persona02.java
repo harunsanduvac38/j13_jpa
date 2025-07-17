@@ -14,7 +14,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 
 @Entity
-@Table(name = "personas") //no hace falta porque el nombre de la tabla es igual a la esta clase
+@Table(name = "personas") //no hace falta si  el nombre de la tabla es igual a la esta clase(hay que ser diferenciar mayúscula - minúscula)
 public class Persona02  implements Serializable{
 	
 	@Id
