@@ -8,8 +8,14 @@
     <persistence-unit name="cursoJPA" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         
-        <class>com.cursogetafe.jpa.ejemplo01.Persona</class>
-        <class>com.cursogetafe.jpa.ejemplo02.Persona02</class>
+        <class>com.cursogetafe.jpa.ejemplo01mapeosimple.Persona</class>
+        <class>com.cursogetafe.jpa.ejemplo02columnyenum.Persona02</class>
+        <class>com.cursogetafe.jpa.ejemplo03insertables.Persona03</class>
+        <class>com.cursogetafe.jpa.ejemplo04pkcompuesto.Persona04</class>
+        <class>com.cursogetafe.jpa.ejemplo04pkcompuesto.Dni</class>
+        <class>com.cursogetafe.jpa.ejemplo04pkcompuesto.DniB</class>
+        <class>com.cursogetafe.jpa.ejemplo04pkcompuesto.Persona04B</class>
+        <class>com.cursogetafe.jpa.ejemplo05tipoacceso.Persona05</class>
         
         <properties>
             <!-- JDBC -->

@@ -1,19 +1,17 @@
-package com.cursogetafe.jpa.ejemplo03;
+package com.cursogetafe.jpa.ejemplo01mapeosimple;
 
 import java.io.Serializable;
 import java.util.Objects;
 
-import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-
 @Entity
-@Table(name = "persona_04")
-public class Persona03 implements Serializable {
+@Table(name = "persona") //no hace falta porque el nombre de la tabla es igual a la esta clase
+public class Persona  implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,55 +21,73 @@ public class Persona03 implements Serializable {
 	private String nombre;
 	private String dni;
 	
-	@Embedded
-	private Domicilio dom;
 	
+	public Persona(int idPersona, String apellidos, String nombre) {
+		super();
+		this.idPersona = idPersona;
+		this.apellidos = apellidos;
+		this.nombre = nombre;
+	}
 	
-	
+	public Persona() {}
 
-	
+
 	public int getIdPersona() {
 		return idPersona;
 	}
+
+
 	public void setIdPersona(int idPersona) {
 		this.idPersona = idPersona;
 	}
+
+
 	public String getApellidos() {
 		return apellidos;
 	}
+
+
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
+
+
 	public String getApodo() {
 		return apodo;
 	}
+
+
 	public void setApodo(String apodo) {
 		this.apodo = apodo;
 	}
+
+
 	public String getNombre() {
 		return nombre;
 	}
+
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
+
 	public String getDni() {
 		return dni;
 	}
+
+
 	public void setDni(String dni) {
 		this.dni = dni;
 	}
-	public Domicilio getDom() {
-		return dom;
-	}
-	public void setDom(Domicilio dom) {
-		this.dom = dom;
-	}
-	
-	
+
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(idPersona);
 	}
+
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -80,20 +96,15 @@ public class Persona03 implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Persona03 other = (Persona03) obj;
+		Persona other = (Persona) obj;
 		return idPersona == other.idPersona;
 	}
+
+
 	@Override
 	public String toString() {
-		return "Persona03 [idPersona=" + idPersona + ", apellidos=" + apellidos + ", apodo=" + apodo + ", nombre="
-				+ nombre + ", dni=" + dni + ", dom=" + dom + "]";
+		return "Persona (" + idPersona + ", " + apellidos + ", " + apodo + ", " + nombre + ", " + dni+ ")\n";
 	}
-	
-	
-	
-	
-	
-	
 	
 	
 	

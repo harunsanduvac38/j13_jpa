@@ -1,15 +1,22 @@
-package com.cursogetafe.jpa.ejemplo03;
+package com.cursogetafe.jpa.ejemplo03insertables;
 
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Domicilio implements Serializable {
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
 
+
+@Embeddable
+public class Domicilio implements Serializable {
+	
+	@Column(name = "tipovia")
 	private String tipoVia;
 	private String via;
 	private int numero;
 	private int piso;
 	private String puerta;
+	@Column(name = "codigopostal")
 	private String codigoPostal;
 	private String ciudad;
 	private String provincia;

@@ -1,4 +1,4 @@
-package com.cursogetafe.jpa.ejemplo01;
+package com.cursogetafe.jpa.ejemplo01mapeosimple;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

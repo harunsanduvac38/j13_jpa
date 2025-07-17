@@ -1,64 +1,48 @@
-package com.cursogetafe.jpa.ejemplo02;
+package com.cursogetafe.jpa.ejemplo05tipoacceso;
 
+import java.beans.Transient;
 import java.io.Serializable;
 import java.util.Objects;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
 
 @Entity
-@Table(name = "personas") //no hace falta si  el nombre de la tabla es igual a la esta clase(hay que ser diferenciar mayúscula - minúscula)
-public class Persona02  implements Serializable{
+@Table(name = "persona") //no hace falta porque el nombre de la tabla es igual a la esta clase
+public class Persona05  implements Serializable{
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_persona")
+	
 	private int idPersona;
-	
-	@Column(name = "p_apellidos")
 	private String apellidos;
-	
-	@Column(name = "p_apodo")
 	private String apodo;
-	
-	@Column(name = "p_nombre")
 	private String nombre;
-	
-	@Column(name = "p_dni")
 	private String dni;
 	
 	
-	@Enumerated(EnumType.STRING)
-	@Column(name = "p_sexo")
-	private Genero genero;
-	
-	@Transient
-	private String nombreYApellido;
-	
-	
-	public Persona02(int idPersona, String apellidos, String nombre) {
+	public Persona05(int idPersona, String apellidos, String nombre) {
 		super();
 		this.idPersona = idPersona;
 		this.apellidos = apellidos;
 		this.nombre = nombre;
 	}
 	
-	public Persona02() {}
+	public Persona05() {
+		System.out.println("Constructos por defecto");
+	}
 
-
+	//Access properties
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int getIdPersona() {
 		return idPersona;
 	}
 
 
 	public void setIdPersona(int idPersona) {
+		System.out.println("setIdPersona()");
 		this.idPersona = idPersona;
 	}
 
@@ -69,6 +53,7 @@ public class Persona02  implements Serializable{
 
 
 	public void setApellidos(String apellidos) {
+		System.out.println("setApellidos()");
 		this.apellidos = apellidos;
 	}
 
@@ -79,6 +64,7 @@ public class Persona02  implements Serializable{
 
 
 	public void setApodo(String apodo) {
+		System.out.println("setApodo()");
 		this.apodo = apodo;
 	}
 
@@ -89,6 +75,7 @@ public class Persona02  implements Serializable{
 
 
 	public void setNombre(String nombre) {
+		System.out.println("setNombre()");
 		this.nombre = nombre;
 	}
 
@@ -99,27 +86,15 @@ public class Persona02  implements Serializable{
 
 
 	public void setDni(String dni) {
+		System.out.println("setDni()");
 		this.dni = dni;
 	}
 	
-	
-	public Genero getGenero() {
-		return genero;
+	@jakarta.persistence.Transient
+	public String getNombreCompleto() {
+		return nombre + " " + apellidos;
 	}
 
-	public void setGenero(Genero genero) {
-		this.genero = genero;
-	}
-	
-	
-
-	public String getNombreYApellido() {
-		return nombreYApellido;
-	}
-
-	public void setNombreYApellido(String nombreYApellido) {
-		this.nombreYApellido = nombreYApellido;
-	}
 
 	@Override
 	public int hashCode() {
@@ -135,14 +110,14 @@ public class Persona02  implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Persona02 other = (Persona02) obj;
+		Persona05 other = (Persona05) obj;
 		return idPersona == other.idPersona;
 	}
 
 
 	@Override
 	public String toString() {
-		return "Persona (" + idPersona + ", " + apellidos + ", " + apodo + ", " + nombre + ", " + dni+ ")\n";
+		return "Persona05 (" + idPersona + ", " + apellidos + ", " + apodo + ", " + nombre + ", " + dni+  ")\n";
 	}
 	
 	
